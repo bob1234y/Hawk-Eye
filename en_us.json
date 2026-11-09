@@ -1,0 +1,8 @@
+{
+  "key.hawkeye.menu": "Open Menu",
+  "key.hawkeye.xray": "Toggle Xray",
+  "key.hawkeye.ore_esp": "Toggle Ore ESP",
+  "key.hawkeye.storage_esp": "Toggle Storage ESP",
+  "key.hawkeye.block_pick": "Block ESP: add / toggle looked-at block",
+  "key.category.hawkeye.controls": "Hawkeye"
+}

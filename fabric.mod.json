@@ -1,0 +1,20 @@
+{
+	"schemaVersion": 1,
+	"id": "hawkeye",
+	"version": "${version}",
+	"name": "Hawkeye",
+	"description": "Client-side utility client: ore xray + glow, storage/base ESP with tracers and outlines, base finder, entity ESP, fullbright and more, with a clean click GUI.",
+	"authors": ["You"],
+	"license": "MIT",
+	"environment": "client",
+	"mixins": ["hawkeye.mixins.json"],
+	"entrypoints": {
+		"client": ["com.hawkeye.client.HawkeyeClient"]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

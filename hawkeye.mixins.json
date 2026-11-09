@@ -1,0 +1,7 @@
+{
+  "required": false,
+  "package": "com.hawkeye.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": ["BlockMixin"],
+  "injectors": {"defaultRequire": 0}
+}
