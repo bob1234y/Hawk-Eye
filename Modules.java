@@ -105,8 +105,8 @@ public final class Modules {
 
 	/** Chunks must be re-meshed for the terrain filter to take effect. */
 	public static void reloadTerrain(Minecraft mc) {
-		if (mc.levelRenderer != null && mc.level != null) {
-			mc.levelRenderer.allChanged();
+		if (mc.levelExtractor != null && mc.level != null) {
+			mc.levelExtractor.allChanged();
 		}
 		EspRenderer.invalidate();
 	}
