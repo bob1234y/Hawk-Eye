@@ -22,10 +22,30 @@ dependencies {
 	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 }
 
+// FLAT LAYOUT: all .java files and the mod json files sit in the top folder of the repo,
+// so there is no src/main/java folder to upload.
+sourceSets {
+	main {
+		java {
+			srcDirs = ['.']
+			include '*.java'
+		}
+		resources {
+			srcDirs = ['.']
+			include 'fabric.mod.json'
+			include 'hawkeye.mixins.json'
+		}
+	}
+}
+
 processResources {
 	inputs.property "version", project.version
 	filesMatching("fabric.mod.json") {
 		expand "version": project.version
+	}
+	// the language file has to end up at assets/hawkeye/lang/en_us.json inside the jar
+	from('en_us.json') {
+		into 'assets/hawkeye/lang'
 	}
 }
 
