@@ -3,9 +3,11 @@ package com.hawkeye.gui;
 import com.hawkeye.config.Settings;
 import com.hawkeye.module.Modules;
 import com.hawkeye.scan.Targets;
+import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.input.KeyEvent;
 import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.network.chat.Component;
 
@@ -672,7 +674,7 @@ public final class ClickGui extends Screen {
 
 	@Override
 	public boolean mouseClicked(MouseButtonEvent event, boolean doubled) {
-		if (event.button() != 0) {
+		if (event.button() != InputConstants.MOUSE_BUTTON_LEFT) {
 			return false;
 		}
 		double mx = event.x();
@@ -706,6 +708,15 @@ public final class ClickGui extends Screen {
 			}
 		}
 		return super.mouseClicked(event, doubled);
+	}
+
+	@Override
+	public boolean keyPressed(KeyEvent event) {
+		if (event.key() == InputConstants.KEY_RSHIFT) {
+			onClose();
+			return true;
+		}
+		return super.keyPressed(event);
 	}
 
 	@Override
